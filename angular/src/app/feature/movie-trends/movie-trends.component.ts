@@ -12,14 +12,16 @@ export class MovieTrendsComponent implements OnInit, AfterViewInit {
   constructor(public trendsDataService: TrendsDataService) { }
 
   chartQueryOptions = ChartQueryConstants.options;
-
   selectedChartOption;
   selectedChartData;
+
   ngOnInit(): void {
   }
 
   ngAfterViewInit() {
-
+    this.trendsDataService.trendData$.subscribe(trendData => {
+      this.selectedChartData = trendData;
+    });
   }
 
   changeSelectedChart(option) {
