@@ -1,18 +1,22 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import { BehaviorSubject, Observable } from 'rxjs';
+import { UrlConstants } from 'src/app/constants/url.constant';
 @Injectable({
   providedIn: 'root'
 })
 export class TrendsDataService {
 
-  chartOptions = [
-    { title: 'Top rated movies', url: 'topRatedMovies' },
-    { title: 'Top rated genres', url: 'topRatedGenres' },
-    { title: 'Top metascore movies', url: 'topRatedMovies' },
-    { title: 'Highest grossing years', url: 'topRatedMovies' },
-  ];
+  trendDataSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null);
+  trendData$: Observable<any> = this.trendDataSubject.asObservable();
 
-  constructor() {
+  getTrendsData(queryString) {
+    this.httpClient.get(`${UrlConstants.serverUrl}/${queryString}`)
+      .subscribe(result => {
+        this.trendDataSubject.next(result);
+      });
+  }
 
+  constructor(private httpClient: HttpClient) {
   }
 }

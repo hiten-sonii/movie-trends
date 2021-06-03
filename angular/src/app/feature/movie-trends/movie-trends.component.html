@@ -2,7 +2,7 @@
   <div>
     <h4>Select from an option below:- </h4>
     <ol>
-      <li *ngFor="let option of trendsDataService.chartOptions" (click)="changeSelectedChart(option)">
+      <li *ngFor="let option of chartQueryOptions" (click)="changeSelectedChart(option)">
         {{option.title}}
       </li>
     </ol>

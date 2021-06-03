@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { GoogleChartsModule } from 'angular-google-charts';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { MovieTrendsComponent } from './feature/movie-trends/movie-trends.compon
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     GoogleChartsModule.forRoot({ version: 'current' })
   ],
   providers: [],
