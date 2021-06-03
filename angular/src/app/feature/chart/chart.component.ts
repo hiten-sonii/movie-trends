@@ -1,6 +1,5 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { GoogleChartComponent } from 'angular-google-charts';
 
 @Component({
   selector: 'app-chart',
@@ -14,17 +13,8 @@ export class ChartComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  charts: Array<{
-    title: string,
-    type: string,
-    data: Array<any>,
-    columnNames?: Array<string>,
-    options?: {};
-  }> = [];
-
   @Input() chartData;
-  @ViewChild('chart')
-  chart: GoogleChartComponent;
+
   chartOptions: any = {
     vAxis: {
       minValue: 0,
@@ -33,16 +23,5 @@ export class ChartComponent implements OnInit {
   };
 
   constructor(private router: Router) {
-    this.charts.push({
-      title: 'Line Chart',
-      type: 'LineChart',
-      data: [
-        ['Apr 19', 21],
-        ['May 19', 15],
-        ['June 19', 17],
-        ['July 19', 19]
-      ],
-    });
   }
-
 }

@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { TrendsDataService } from './trendsData.service';
+import { TrendsDataService } from './service/trendsData.service';
 import { ChartQueryConstants } from '../../constants/chartQueries.constant';
 
 @Component({
