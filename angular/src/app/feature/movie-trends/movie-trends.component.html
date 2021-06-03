@@ -1,0 +1,10 @@
+<h2>Welcome to the Movie Trends Page</h2>
+  <div>
+    <h4>Select from an option below:- </h4>
+    <ol>
+      <li *ngFor="let option of trendsDataService.chartOptions" (click)="changeSelectedChart(option)">
+        {{option.title}}
+      </li>
+    </ol>
+  </div>
+<app-chart [chartData]="selectedChartData"></app-chart>

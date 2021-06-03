@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { GoogleChartComponent } from 'angular-google-charts';
 
@@ -22,6 +22,7 @@ export class ChartComponent implements OnInit {
     options?: {};
   }> = [];
 
+  @Input() chartData;
   @ViewChild('chart')
   chart: GoogleChartComponent;
   chartOptions: any = {
@@ -42,7 +43,6 @@ export class ChartComponent implements OnInit {
         ['July 19', 19]
       ],
     });
-    console.log(this.charts);
   }
 
 }

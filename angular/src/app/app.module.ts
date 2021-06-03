@@ -5,11 +5,13 @@ import { GoogleChartsModule } from 'angular-google-charts';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChartComponent } from './feature/chart/chart.component';
+import { MovieTrendsComponent } from './feature/movie-trends/movie-trends.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChartComponent
+    ChartComponent,
+    MovieTrendsComponent
   ],
   imports: [
     BrowserModule,
